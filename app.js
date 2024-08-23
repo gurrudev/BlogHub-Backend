@@ -6,14 +6,7 @@ const userRouter = require('./router/users.routes')
 
 const app = express()
 
-const corsConfig = {
-    origin: "*",
-    credential : true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"]
-}
-
-app.use(cors(corsConfig));
-app.options("", cors(corsConfig));
+app.use(cors());
 app.use(express.json())
 dbConnect()
 

@@ -81,7 +81,7 @@ class UserController {
             expiresIn: "4h",
         });
 
-        return res.status(200).json({ massage: 'login successfull!', token });
+        return res.status(200).json({ massage: 'login successful!', token });
     };
 
     static updateUser = async (req, res, next) => {

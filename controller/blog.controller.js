@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const Blogs = require('../models/blogs.model')
 const User = require('../models/users.model')
 
@@ -109,7 +110,7 @@ class BlogController {
         let blog;
 
         try {
-            blog = await Blogs.findByIdAndRemove(id).populate('user')
+            blog = await Blogs.findByIdAndDelete(id).populate('user')
             await blog.user.blogs.pull(blog)
             await blog.user.save()
         } catch (err) {

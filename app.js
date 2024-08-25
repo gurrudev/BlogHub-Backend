@@ -3,23 +3,21 @@ const cors = require('cors')
 const blogsRouter = require('./router/blogs.routes')
 const dbConnect = require('./config/dbConfig')
 const userRouter = require('./router/users.routes')
-const YAML = require("yamljs");
-const path = require('path');
-const swaggerUI = require("swagger-ui-express");
-
-
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./utils/swaggerDocument')
 
 const app = express()
 
 app.use(cors());
-
 app.use(express.json())
+
+// db config
 dbConnect()
 
-const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
-
+// swagger route
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
+// api routes
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', userRouter)
 

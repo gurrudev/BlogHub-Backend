@@ -5,7 +5,6 @@ const dbConnect = require('./config/dbConfig')
 const userRouter = require('./router/users.routes')
 const swaggerUI = require('swagger-ui-express');
 const swaggerDocument = require('./utils/swaggerDocument')
-const path = require('path')
 
 const app = express()
 
@@ -15,16 +14,14 @@ app.use(express.json())
 // db config
 dbConnect()
 
-app.use('/static', express.static(path.join(__dirname, 'public')));
-
-// swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
-    customCssUrl: 'swagger-ui.css',
-    customJs: [
-      'swagger-ui-bundle.js',
-      'swagger-ui-standalone-preset.js'
-    ]
-  }));
+  customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui.css',
+  customJs: [
+    'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-bundle.js',
+    'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-standalone-preset.js'
+  ]
+}));
+
   
   
 

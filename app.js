@@ -17,10 +17,7 @@ dbConnect()
 app.use(express.static('public'));
 
 // swagger route
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
-    customCss: 'custom-swagger-ui.css',
-    customJs: 'swagger-ui-bundle.js'
-}));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
   
 
 // api routes

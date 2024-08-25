@@ -14,8 +14,14 @@ app.use(express.json())
 // db config
 dbConnect()
 
+app.use(express.static('public'));
+
 // swagger route
-app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
+    customCss: 'custom-swagger-ui.css',
+    customJs: 'swagger-ui-bundle.js'
+}));
+  
 
 // api routes
 app.use('/api/blogs', blogsRouter)

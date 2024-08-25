@@ -16,10 +16,10 @@ dbConnect()
 
 // swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
-    customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui.css',
+    customCssUrl: './utils/swagger/swagger-ui/swagger-ui.css',
     customJs: [
-      'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-bundle.js',
-      'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-standalone-preset.js'
+      './utils/swagger/swagger-ui/swagger-ui-bundle.js',
+      './utils/swagger/swagger-ui/swagger-ui-standalone-preset.js'
     ]
   }));
   

@@ -4,7 +4,9 @@ const blogsRouter = require('./router/blogs.routes')
 const dbConnect = require('./config/dbConfig')
 const userRouter = require('./router/users.routes')
 const swaggerUI = require('swagger-ui-express');
-const swaggerDocument = require('./utils/swaggerDocument')
+// const swaggerDocument = require('./utils/swaggerDocument')
+const YAML = require('yamljs');
+const path = require('path');
 
 const app = express()
 
@@ -15,6 +17,8 @@ app.use(express.json())
 dbConnect()
 
 app.use(express.static('public'));
+
+const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
 // swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));

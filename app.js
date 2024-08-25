@@ -19,10 +19,10 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
-    customCssUrl: '/swagger-ui/swagger-ui.css',
+    customCssUrl: 'swagger-ui.css',
     customJs: [
-      '/swagger-ui/swagger-ui-bundle.js',
-      '/swagger-ui/swagger-ui-standalone-preset.js'
+      'swagger-ui-bundle.js',
+      'swagger-ui-standalone-preset.js'
     ]
   }));
   

@@ -22,8 +22,10 @@ const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 // swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
     customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui.css',
-    customJs: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-bundle.js'
-}));
+    customJs: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-bundle.js',
+    customJs: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-standalone-preset.js'
+  }));
+  
   
 
 // api routes

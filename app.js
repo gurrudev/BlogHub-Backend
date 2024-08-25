@@ -15,7 +15,7 @@ app.use(express.json())
 dbConnect()
 
 // swagger route
-app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+// app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // api routes
 app.use('/api/blogs', blogsRouter)

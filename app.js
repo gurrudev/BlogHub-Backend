@@ -14,16 +14,14 @@ app.use(express.json())
 // db config
 dbConnect()
 
+// swagger route
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, {
   customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui.css',
   customJs: [
     'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-bundle.js',
     'https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest/swagger-ui-standalone-preset.js'
   ]
-}));
-
-  
-  
+}))
 
 // api routes
 app.use('/api/blogs', blogsRouter)

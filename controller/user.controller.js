@@ -64,7 +64,7 @@ class UserController {
         }
 
         if (!existingUser) {
-            return res.status(401).json({ message: "User not found" });
+            return res.status(404).json({ message: "User not found" });
         }
 
         const isPasswordCorrect = bcrypt.compareSync(
@@ -155,7 +155,7 @@ class UserController {
             return res.status(200).json({ user: userDataToSend });
         } catch (error) {
             console.error(error); // Log the error for debugging
-            return res.status(401).json({ message: "Invalid token" });
+            return res.status(498).json({ message: "Invalid token" });
         }
     };
 

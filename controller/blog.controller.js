@@ -33,7 +33,7 @@ class BlogController {
         }
 
         if(!existingUser){
-            return res.status(501).send('Invalid User ID')
+            return res.status(501).json({message: 'Invalid User ID'})
         }
 
         const blogs_data = new Blogs({
@@ -55,7 +55,7 @@ class BlogController {
 
         } catch (err) {
             console.log(err);
-            return res.status(500).json({message: err})
+            return res.status(500).json({message: "Internal Server Error"})
         }
 
         return res.status(200).json({ blogs_data })
@@ -118,7 +118,7 @@ class BlogController {
         }
 
         if (!blog) {
-            return res.status(400).json({ message: 'Unable to delete' })
+            return res.status(404).json({ message: 'No blog found' })
         }
 
         return res.status(200).json({ message: 'Deleted Successfully' })

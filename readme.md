@@ -1,4 +1,4 @@
-# Social-Media-Api (BlobHub API's)
+# BlogHub-Backend
 
 📦Install
 

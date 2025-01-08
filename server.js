@@ -5,7 +5,9 @@ app.listen(PORT, (req, res) => {
     console.log(`Server is running http://127.0.0.1:${PORT}`);
 });
 
-// Cluster
+/////////////////////////////////
+///////     Clusters     ////////
+/////////////////////////////////
 
 /*
 const cluster = require('cluster')

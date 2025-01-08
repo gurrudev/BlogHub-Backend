@@ -1,4 +1,13 @@
-const app = require('./app')
+const app = require("./app");
+
+const PORT = 3002;
+app.listen(PORT, (req, res) => {
+    console.log(`Server is running http://127.0.0.1:${PORT}`);
+});
+
+// Cluster
+
+/*
 const cluster = require('cluster')
 const os = require('os')
 
@@ -19,3 +28,4 @@ if (cluster.isMaster) {
         console.log(`Server is running http://127.0.0.1:${PORT}`);
     })
 }
+*/
